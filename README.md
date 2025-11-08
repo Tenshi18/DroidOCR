@@ -15,6 +15,12 @@ Native Android application for recognizing Russian, Belarusian, Ukrainian, and E
 - Multi-line text detection and recognition
 - Interactive text selection on images
 
+## UI Screenshots
+<p align="left">
+   <img src="repo-assets/screenshots/Screenshot1_en.png" height="480">
+   <img src="repo-assets/screenshots/Screenshot2_en.png" height="480">
+</p>
+
 ## Requirements
 
 - Android Studio Arctic Fox or newer

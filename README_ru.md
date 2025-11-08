@@ -15,6 +15,12 @@
 - Распознавание многострочного текста
 - Интерактивное выделение текста на изображениях
 
+## Скриншоты интерфейса
+<p align="left">
+   <img src="repo-assets/screenshots/Screenshot1_ru.png" height="480">
+   <img src="repo-assets/screenshots/Screenshot2_ru.png" height="480">
+</p>
+
 ## Требования
 
 - Android Studio Arctic Fox или новее
