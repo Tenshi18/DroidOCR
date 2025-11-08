@@ -3,6 +3,8 @@
 # DroidOCR
 Native Android application for recognizing Russian, Belarusian, Ukrainian, and English text using PaddlePaddle OCR v5 and ncnn.
 
+[<img src="repo-assets/download-sources/github.png" height="40">](https://github.com/Tenshi18/DroidOCR/releases/latest)
+
 ## Features
 
 - Russian, Belarusian, Ukrainian, and English text recognition
