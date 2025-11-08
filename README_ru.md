@@ -1,6 +1,8 @@
 **[[EN](README.md)]** ● **[RU]**
 
 # DroidOCR
+<img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" height=64>
+
 Нативное Android-приложение для распознавания русского, белорусского, украинского и английского текста на базе PaddlePaddle OCR v5 и ncnn.
 
 [![Лицензия](https://img.shields.io/github/license/Tenshi18/DroidOCR)](https://www.apache.org/licenses/LICENSE-2.0)
