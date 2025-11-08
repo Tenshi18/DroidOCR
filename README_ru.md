@@ -3,6 +3,10 @@
 # DroidOCR
 Нативное Android-приложение для распознавания русского, белорусского, украинского и английского текста на базе PaddlePaddle OCR v5 и ncnn.
 
+[![Лицензия](https://img.shields.io/github/license/Tenshi18/DroidOCR)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Всего скачиваний](https://img.shields.io/github/downloads/Tenshi18/DroidOCR/total)](https://github.com/Tenshi18/OCR/releases)
+[![Звезды GitHub-репозитория](https://img.shields.io/github/stars/Tenshi18/DroidOCR)](https://github.com/Tenshi18/DroidOCR/stargazers)
+
 [<img src="repo-assets/download-sources/github.png" height="40">](https://github.com/Tenshi18/DroidOCR/releases/latest)
 
 ## Особенности
