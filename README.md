@@ -1,7 +1,13 @@
 **[EN]** ● **[[RU](README_ru.md)]**
 
 # DroidOCR
+<img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" height=64>
+
 Native Android application for recognizing Russian, Belarusian, Ukrainian, and English text using PaddlePaddle OCR v5 and ncnn.
+
+[![License](https://img.shields.io/github/license/Tenshi18/DroidOCR)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Total Downloads](https://img.shields.io/github/downloads/Tenshi18/DroidOCR/total)](https://github.com/Tenshi18/OCR/releases)
+[![GitHub Repo Stars](https://img.shields.io/github/stars/Tenshi18/DroidOCR)](https://github.com/Tenshi18/DroidOCR/stargazers)
 
 [<img src="repo-assets/download-sources/github.png" height="40">](https://github.com/Tenshi18/DroidOCR/releases/latest)
 
