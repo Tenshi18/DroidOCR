@@ -161,7 +161,7 @@ All included in the repo.
 
 ## TODO
 
-- [ ] **Shared Intent support**
+- [x] **Shared Intent support**
 - [ ] **Multilingual support**
 - [ ] **Batch processing** - multiple images at once
 - [ ] **Camera integration** - live OCR
