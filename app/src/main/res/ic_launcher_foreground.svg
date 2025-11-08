@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:width="108dp"
+  android:height="108dp"
+  viewBox="0 0 1024 1024"
+  android:viewportWidth="1024"
+  android:viewportHeight="1024">
+  
+  <defs>
+    <linearGradient id="gLens" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4A90E2"/>
+      <stop offset="0.6" stop-color="#7FB3FF"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.95"/>
+    </linearGradient>
+    
+    <linearGradient id="gDoc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F1F3F5"/>
+    </linearGradient>
+    
+    <linearGradient id="gStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2E4053"/>
+      <stop offset="1" stop-color="#5B6B7D"/>
+    </linearGradient>
+    
+    <radialGradient id="gLensInner" cx="40%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#2C6BB2" stop-opacity="0.12"/>
+    </radialGradient>
+    
+    <linearGradient id="gOSI" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3DA639"/>
+      <stop offset="1" stop-color="#1E531D"/>
+    </linearGradient>
+    
+    <style type="text/css"><![CDATA[
+      .strokeBold { stroke: url(#gStroke); stroke-width: 34; stroke-linejoin: round; stroke-linecap: round; fill: none; }
+      .strokeThin { stroke: url(#gStroke); stroke-width: 12; stroke-linejoin: round; stroke-linecap: round; fill: none; }
+      .fillSoft { fill: url(#gDoc); }
+      .textBox { fill: none; stroke: #7A8A9A; stroke-width: 8; stroke-linejoin: round; stroke-linecap: round; }
+    ]]></style>
+  </defs>
+
+  <g transform="translate(512, 512) scale(0.65) translate(-512, -512)">
+    <g transform="translate(0,0)">
+      <rect
+        x="220" y="220"
+        width="540" height="720"
+        rx="14" ry="14"
+        class="fillSoft"
+        stroke="#D0D6DB" stroke-width="10"
+        transform="rotate(-6 490 580)" />
+      <rect x="230" y="240" width="520" height="40" rx="6" ry="6" fill="#E8EEF6" transform="rotate(-6 490 260)"/>
+    </g>
+
+    <g transform="rotate(-6 490 580)">
+      <rect x="280" y="320" width="320" height="34" class="textBox" rx="6"/>
+      <rect x="280" y="380" width="420" height="34" class="textBox" rx="6"/>
+      <rect x="280" y="440" width="360" height="34" class="textBox" rx="6"/>
+      <rect x="320" y="520" width="280" height="28" class="textBox" rx="5"/>
+      <rect x="320" y="568" width="200" height="28" class="textBox" rx="5"/>
+      <g transform="translate(440, 750) scale(3.5)">
+        <path d="M-0.136,16.708c0.152,-8.765 6.287,-15.005 13.797,-16.015 8.959,-1.199 16.495,4.895 17.943,12.979 1.375,7.667 -2.839,14.844 -9.787,17.688 -0.599,0.244 -0.927,0.109 -1.156,-0.5l-3.453,-8.969c-0.197,-0.527 -0.063,-0.855 0.453,-1.088 1.563,-0.709 2.536,-1.896 2.797,-3.6 0.411,-2.64 -1.5,-5.077 -4.161,-5.307 -2.423,-0.235 -4.609,1.453 -5,3.853 -0.339,2.131 0.713,4.115 2.697,5.016 0.62,0.281 0.745,0.557 0.505,1.188l-3.469,9.031c-0.167,0.443 -0.531,0.6 -1,0.417 -3.661,-1.432 -6.667,-4.167 -8.437,-7.677 -1.609,-3.177 -1.624,-5.661 -1.729,-7.021zM1.213,16.584c0.027,0.427 0.041,0.921 0.084,1.427 0.405,4.64 3.197,9.26 8.452,11.817 0.209,0.093 0.287,0.052 0.365,-0.145 0.959,-2.527 1.927,-5.052 2.901,-7.579 0.083,-0.208 0.041,-0.307 -0.152,-0.427 -2.041,-1.287 -3.057,-3.131 -2.943,-5.552 0.063,-1.391 0.6,-2.615 1.537,-3.636 1.932,-2.109 4.968,-2.568 7.453,-1.135 2.052,1.187 3.197,3.484 2.916,5.839 -0.235,1.968 -1.244,3.479 -2.953,4.5 -0.172,0.104 -0.224,0.187 -0.145,0.389 0.979,2.532 1.953,5.063 2.916,7.595 0.079,0.203 0.157,0.244 0.36,0.145 2.297,-1.068 4.208,-2.599 5.688,-4.64 2.244,-3.115 3.171,-6.579 2.728,-10.391 -0.88,-7.584 -7.703,-13.865 -16.489,-12.781 -6.844,0.839 -12.604,6.615 -12.719,14.573z"
+              fill="url(#gOSI)"/>
+      </g>
+    </g>
+
+    <g transform="translate(0,0)">
+      <circle cx="512" cy="420" r="170" fill="url(#gLens)" class="strokeBold"/>
+      <circle cx="512" cy="420" r="120" fill="none" stroke="#183B6A" stroke-width="18"/>
+      <ellipse cx="470" cy="380" rx="72" ry="38" fill="url(#gLensInner)" opacity="0.95" />
+      <g opacity="0.18" stroke="#08233F" stroke-width="8" stroke-linecap="round">
+        <line x1="420" y1="420" x2="600" y2="420"/>
+        <line x1="400" y1="455" x2="620" y2="455"/>
+        <line x1="440" y1="385" x2="580" y2="385"/>
+      </g>
+    </g>
+
+    <g>
+      <rect x="380" y="320" width="264" height="198" rx="26" ry="26" fill="none" class="strokeThin" />
+    </g>
+  </g>
+</svg>

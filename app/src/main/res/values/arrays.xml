@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="language_entries">
+        <item>System default</item>
+        <item>English</item>
+        <item>Русский</item>
+    </array>
+    
+    <array name="language_values">
+        <item>system</item>
+        <item>en</item>
+        <item>ru</item>
+    </array>
+</resources>
+

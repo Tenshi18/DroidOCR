@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DroidOCR</string>
+    <string name="select_language">Выбрать язык</string>
+    <string name="close">Закрыть</string>
+    <string name="model_status">Статус модели: %1$s</string>
+    <string name="model_loaded">Загружена</string>
+    <string name="model_not_loaded">Не загружена</string>
+    <string name="select_image">Выбрать изображение</string>
+    <string name="recognized_text">Распознанный текст:</string>
+    <string name="instructions">Инструкция:</string>
+    <string name="instruction_steps">1) Нажмите \"Выбрать изображение\"\n2) Выберите фото с текстом\n3) Выделяйте распознанный текст под изображением или нажмите на изображение и выделяйте текст прямо на нём (чтобы выйти, нажмите \"назад\").\n\nПоддерживаются русский, белорусский, украинский и английский языки. Для распознавания используется модель PaddlePaddle OCR v5 для восточнославянских языков (eslav_PP-OCRv5_mobile_rec).</string>
+    <string name="processing">Распознавание…</string>
+    <string name="error_prefix">Ошибка: %1$s</string>
+    <string name="image_with_text">Изображение с текстом</string>
+    <string name="selected_image">Выбранное изображение</string>
+    <string name="fullscreen_image">Полноразмерное изображение</string>
+    <string name="fullscreen_view">Полноэкранный просмотр</string>
+    <string name="app_language">Язык приложения</string>
+    <string name="app_language_description">Выберите язык интерфейса приложения</string>
+    <string name="select_app_language">Выбрать язык приложения</string>
+    <string name="settings">Настройки</string>
+</resources>
+
