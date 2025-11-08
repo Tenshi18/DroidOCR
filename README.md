@@ -40,7 +40,7 @@ unzip ncnn-20250916-android-vulkan.zip
 mv ncnn-20250916-android-vulkan ncnn
 
 # OpenCV Mobile
-wget https://github.com/nihui/opencv-mobile/releases/download/v4.12.0/opencv-mobile-4.12.0-android.zip
+wget https://github.com/nihui/opencv-mobile/releases/download/v34/opencv-mobile-4.12.0-android.zip
 unzip opencv-mobile-4.12.0-android.zip
 ```
 
