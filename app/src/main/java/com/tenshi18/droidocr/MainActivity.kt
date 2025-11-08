@@ -18,6 +18,7 @@ package com.tenshi18.droidocr
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -65,6 +66,7 @@ class MainActivity : ComponentActivity() {
     private val ppocrRec = PPOCRv5Rec()
     private lateinit var languageManager: LanguageManager
     private var isModelLoaded = false
+    private var sharedImageUri: Uri? = null
     
     override fun attachBaseContext(newBase: Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -89,6 +91,8 @@ class MainActivity : ComponentActivity() {
         }
         
         loadModel()
+
+        handleSharedIntent(intent)
         
         setContent {
             DroidOCRTheme {
@@ -100,6 +104,8 @@ class MainActivity : ComponentActivity() {
                         ppocrRec = ppocrRec,
                         isModelLoaded = isModelLoaded,
                         languageManager = languageManager,
+                        sharedImageUri = sharedImageUri,
+                        onSharedImageProcessed = { sharedImageUri = null },
                         onLanguageChanged = { language ->
                             switchLanguage(language)
                         }
@@ -123,6 +129,24 @@ class MainActivity : ComponentActivity() {
             )
         } catch (e: Exception) {
             Log.e("MainActivity", "Failed to load model", e)
+        }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        handleSharedIntent(intent)
+    }
+    
+    private fun handleSharedIntent(intent: Intent?) {
+        if (intent?.action == Intent.ACTION_SEND && intent.type?.startsWith("image/") == true) {
+            val uri = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                intent.getParcelableExtra(Intent.EXTRA_STREAM, Uri::class.java)
+            } else {
+                @Suppress("DEPRECATION")
+                intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
+            }
+            sharedImageUri = uri
         }
     }
     
@@ -294,6 +318,8 @@ fun OCRScreen(
     ppocrRec: PPOCRv5Rec,
     isModelLoaded: Boolean,
     languageManager: LanguageManager,
+    sharedImageUri: Uri?,
+    onSharedImageProcessed: () -> Unit,
     onLanguageChanged: (OcrLanguage) -> Unit
 ) {
     val context = LocalContext.current
@@ -307,18 +333,18 @@ fun OCRScreen(
     var showLanguageDialog by remember { mutableStateOf(false) }
     var currentLanguage by remember { mutableStateOf(languageManager.getCurrentLanguage()) }
     
-    val imagePickerLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.GetContent()
-    ) { uri: Uri? ->
-        uri?.let {
-            scope.launch {
-                try {
-                    val inputStream: InputStream? = context.contentResolver.openInputStream(uri)
-                    val bitmap = BitmapFactory.decodeStream(inputStream)
+    // Функция для обработки изображения из Uri
+    fun processImageFromUri(uri: Uri) {
+        scope.launch {
+            try {
+                val inputStream: InputStream? = context.contentResolver.openInputStream(uri)
+                val bitmap = BitmapFactory.decodeStream(inputStream)
+                inputStream?.close()
+                
+                if (bitmap != null) {
                     selectedImageBitmap = bitmap
-                    inputStream?.close()
                     
-                    if (isModelLoaded && bitmap != null) {
+                    if (isModelLoaded) {
                         isProcessing = true
                         val regions = withContext(Dispatchers.Default) {
                             ppocrRec.detectAndRecognizeWithBoxes(bitmap)
@@ -334,13 +360,27 @@ fun OCRScreen(
                         
                         isProcessing = false
                     }
-                } catch (e: Exception) {
-                    Log.e("MainActivity", "Failed to recognize text", e)
-                    recognizedText = context.resources.getString(R.string.error_prefix, e.message ?: "")
-                    isProcessing = false
                 }
+            } catch (e: Exception) {
+                Log.e("MainActivity", "Failed to process image", e)
+                recognizedText = context.resources.getString(R.string.error_prefix, e.message ?: "")
+                isProcessing = false
             }
         }
+    }
+    
+    // Обработка shared image при первом появлении
+    LaunchedEffect(sharedImageUri) {
+        sharedImageUri?.let { uri ->
+            processImageFromUri(uri)
+            onSharedImageProcessed()
+        }
+    }
+    
+    val imagePickerLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.GetContent()
+    ) { uri: Uri? ->
+        uri?.let { processImageFromUri(it) }
     }
     
     Column(
@@ -534,7 +574,7 @@ fun LanguageSelectionDialog(
         },
         text = {
             Column {
-                OcrLanguage.values().forEach { language ->
+                OcrLanguage.entries.forEach { language ->
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
