@@ -81,7 +81,7 @@ DroidOCR/
 │   │       ├── ncnn/
 │   │       └── opencv-mobile-4.12.0-android/
 │   └── build.gradle.kts
-└── README.md
+└── README_ru.md
 ```
 
 ## Использование
